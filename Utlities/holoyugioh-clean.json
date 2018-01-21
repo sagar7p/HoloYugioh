@@ -1,0 +1,358 @@
+{
+  "Game" : {
+    "Players" : {
+      "Player1" : {
+        "Field" : {
+          "Monster" : {
+            "Card1" : {
+              "Name" : "",
+              "Position" : 0
+            },
+            "Card2" : {
+              "Name" : "",
+              "Position" : 0
+            },
+            "Card3" : {
+              "Name" : "",
+              "Position" : 0
+            },
+            "Card4" : {
+              "Name" : "",
+              "Position" : 0
+            },
+            "Card5" : {
+              "Name" : "",
+              "Position" : 0
+            }
+          },
+          "Spell-Trap" : {
+            "Card1" : {
+              "Name" : "",
+              "Position" : 0
+            },
+            "Card2" : {
+              "Name" : "",
+              "Position" : 0
+            },
+            "Card3" : {
+              "Name" : "",
+              "Position" : 0
+            },
+            "Card4" : {
+              "Name" : "",
+              "Position" : 0
+            },
+            "Card5" : {
+              "Name" : "",
+              "Position" : 0
+            },
+            "Card6" : {
+              "Name" : "",
+              "Position" : 0
+            }
+          }
+        },
+        "Life Points" : 8000
+      },
+      "Player2" : {
+        "Field" : {
+          "Monster" : {
+            "Card1" : {
+              "Name" : "",
+              "Position" : 0
+            },
+            "Card2" : {
+              "Name" : "",
+              "Position" : 0
+            },
+            "Card3" : {
+              "Name" : "",
+              "Position" : 0
+            },
+            "Card4" : {
+              "Name" : "",
+              "Position" : 0
+            },
+            "Card5" : {
+              "Name" : "",
+              "Position" : 0
+            }
+          },
+          "Spell-Trap" : {
+            "Card1" : {
+              "Name" : "",
+              "Position" : 0
+            },
+            "Card2" : {
+              "Name" : "",
+              "Position" : 0
+            },
+            "Card3" : {
+              "Name" : "",
+              "Position" : 0
+            },
+            "Card4" : {
+              "Name" : "",
+              "Position" : 0
+            },
+            "Card5" : {
+              "Name" : "",
+              "Position" : 0
+            },
+            "Card6" : {
+              "Name" : "",
+              "Position" : 0
+            }
+          }
+        },
+        "Life Points" : 8000
+      }
+    }
+  },
+  "Game1" : {
+    "Field Spell" : {
+      "Name" : "Skyscraper",
+      "Position" : 1
+    },
+    "Players" : {
+      "Player1" : {
+        "Field" : {
+          "Monster" : {
+            "Card1" : {
+              "Name" : "Monster Reborn",
+              "Position" : 1
+            },
+            "Card2" : {
+              "Name" : "Stardust Dragon",
+              "Position" : 0
+            },
+            "Card3" : {
+              "Name" : "Field Spell",
+              "Position" : 2
+            },
+            "Card4" : {
+              "Name" : "",
+              "Position" : 0
+            },
+            "Card5" : {
+              "Name" : "",
+              "Position" : 0
+            }
+          },
+          "Pendulum Left" : {
+            "Name" : "",
+            "Position" : 0
+          },
+          "Pendulum Right" : {
+            "Name" : "",
+            "Position" : 0
+          },
+          "Spell-Trap" : {
+            "Card1" : {
+              "Name" : "",
+              "Position" : 0
+            },
+            "Card2" : {
+              "Name" : "",
+              "Position" : 0
+            },
+            "Card3" : {
+              "Name" : "",
+              "Position" : 0
+            },
+            "Card4" : {
+              "Name" : "",
+              "Position" : 0
+            },
+            "Card5" : {
+              "Name" : "",
+              "Position" : 0
+            }
+          }
+        },
+        "Life Points" : 6000,
+        "Name" : "Yusei"
+      },
+      "Player2" : {
+        "Field" : {
+          "Monster" : {
+            "Card1" : {
+              "Name" : "",
+              "Position" : 0
+            },
+            "Card2" : {
+              "Name" : "",
+              "Position" : 0
+            },
+            "Card3" : {
+              "Name" : "",
+              "Position" : 0
+            },
+            "Card4" : {
+              "Name" : "",
+              "Position" : 0
+            },
+            "Card5" : {
+              "Name" : "",
+              "Position" : 0
+            }
+          },
+          "Pendulum Left" : {
+            "Name" : "",
+            "Position" : 0
+          },
+          "Pendulum Right" : {
+            "Name" : "",
+            "Position" : 0
+          },
+          "Spell-Trap" : {
+            "Card1" : {
+              "Name" : "",
+              "Position" : 0
+            },
+            "Card2" : {
+              "Name" : "",
+              "Position" : 0
+            },
+            "Card3" : {
+              "Name" : "",
+              "Position" : 0
+            },
+            "Card4" : {
+              "Name" : "",
+              "Position" : 0
+            },
+            "Card5" : {
+              "Name" : "",
+              "Position" : 0
+            }
+          }
+        },
+        "Life Points" : 8000,
+        "Name" : "Jaden"
+      }
+    }
+  },
+  "Pratikeo PrakashVSPlayer2" : {
+    "Field Spell" : {
+      "Name" : "",
+      "Position" : 0
+    },
+    "Players" : {
+      "Player2" : {
+        "Field" : {
+          "Monster" : {
+            "Card1" : {
+              "Name" : "",
+              "Position" : 0
+            },
+            "Card2" : {
+              "Name" : "",
+              "Position" : 0
+            },
+            "Card3" : {
+              "Name" : "",
+              "Position" : 0
+            },
+            "Card4" : {
+              "Name" : "",
+              "Position" : 0
+            },
+            "Card5" : {
+              "Name" : "",
+              "Position" : 0
+            }
+          },
+          "Pendulum Left" : {
+            "Name" : "",
+            "Position" : 0
+          },
+          "Pendulum Right" : {
+            "Name" : "",
+            "Position" : 0
+          },
+          "Spell-Trap" : {
+            "Card1" : {
+              "Name" : "",
+              "Position" : 0
+            },
+            "Card2" : {
+              "Name" : "",
+              "Position" : 0
+            },
+            "Card3" : {
+              "Name" : "",
+              "Position" : 0
+            },
+            "Card4" : {
+              "Name" : "",
+              "Position" : 0
+            },
+            "Card5" : {
+              "Name" : "",
+              "Position" : 0
+            }
+          }
+        },
+        "Life Points" : 7700
+      },
+      "Pratikeo Prakash" : {
+        "Field" : {
+          "Monster" : {
+            "Card1" : {
+              "Name" : "",
+              "Position" : 0
+            },
+            "Card2" : {
+              "Name" : "",
+              "Position" : 0
+            },
+            "Card3" : {
+              "Name" : "Dust Tornado",
+              "Position" : 1
+            },
+            "Card4" : {
+              "Name" : "",
+              "Position" : 0
+            },
+            "Card5" : {
+              "Name" : "",
+              "Position" : 0
+            }
+          },
+          "Pendulum Left" : {
+            "Name" : "",
+            "Position" : 0
+          },
+          "Pendulum Right" : {
+            "Name" : "",
+            "Position" : 0
+          },
+          "Spell-Trap" : {
+            "Card1" : {
+              "Name" : "",
+              "Position" : 0
+            },
+            "Card2" : {
+              "Name" : "",
+              "Position" : 0
+            },
+            "Card3" : {
+              "Name" : "",
+              "Position" : 0
+            },
+            "Card4" : {
+              "Name" : "",
+              "Position" : 0
+            },
+            "Card5" : {
+              "Name" : "",
+              "Position" : 0
+            }
+          }
+        },
+        "Life Points" : 7700
+      }
+    }
+  }
+}
