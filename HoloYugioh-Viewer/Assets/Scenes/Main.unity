@@ -248,7 +248,7 @@ GameObject:
   - component: {fileID: 290295892}
   - component: {fileID: 290295893}
   m_Layer: 0
-  m_Name: Life Points
+  m_Name: Life_Points
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -824,7 +824,7 @@ GameObject:
   m_Component:
   - component: {fileID: 781456722}
   m_Layer: 0
-  m_Name: Spell-Trap
+  m_Name: Spell_Trap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1898,7 +1898,7 @@ GameObject:
   - component: {fileID: 1461399581}
   - component: {fileID: 1461399582}
   m_Layer: 0
-  m_Name: Life Points
+  m_Name: Life_Points
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2048,7 +2048,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1695343677}
   m_Layer: 0
-  m_Name: Spell-Trap
+  m_Name: Spell_Trap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="HoloDuelist.CardPage">
+	<ContentPage.Content>
+       <StackLayout> 
+        <Entry x:Name="cardEntry" Margin="20,-10,20,0" HorizontalOptions="FillAndExpand" Placeholder="Card Name" Completed="Handle_Completed">
+            <Entry.Margin>
+              <OnPlatform x:TypeArguments="Thickness"
+                          iOS="20,10,20,0"
+                          Android="20,-10,20,0" />
+            </Entry.Margin>
+        </Entry>
+        <Image x:Name="card" Source="https://static-3.studiobebop.net/ygo_data/card_images/Token.jpg" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFit">
+            <Image.Margin>
+                <OnPlatform x:TypeArguments="Thickness"
+                          iOS="30,0,30,20"
+                          Android="20,0,20,0" />
+            </Image.Margin>
+         </Image>
+        <StackLayout x:Name="actions" Margin="10,0,10,10" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+             <Frame Style="{StaticResource frameStyle}" x:Name="attack" ClassId="1">       
+                    <Image Margin="10,10,10,10" Source="http://www.navilagando.com/wp-content/uploads/ktz/Yugioh-Card-Template-7-34gjm0ykg43iff5m5g81z4.png" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFit"/>
+                     <Frame.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Tapped="Handle_Tapped" />
+                     </Frame.GestureRecognizers>
+             </Frame>
+             <Frame Style="{StaticResource frameStyle}" x:Name="defense" ClassId="3">       
+                    <Image Margin="10,10,10,10" Source="http://www.navilagando.com/wp-content/uploads/ktz/Yugioh-Card-Template-7-34gjm0ykg43iff5m5g81z4.png"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFit" Rotation="90"/>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Tapped="Handle_Tapped" />
+                     </Frame.GestureRecognizers>
+             </Frame>
+             <Frame Style="{StaticResource frameStyle}" x:Name="down" ClassId="2">       
+                    <Image Margin="10,10,10,10" Source="https://orig00.deviantart.net/9c03/f/2013/196/d/3/yugioh_card_back_v2_by_endergon_oscuro-d6dlsyg.jpg"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFit" Rotation="90"/>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Tapped="Handle_Tapped" />
+                     </Frame.GestureRecognizers>
+             </Frame>
+             <Frame Style="{StaticResource frameStyle}" x:Name="set" ClassId="2">       
+                    <Image Margin="10,10,10,10" Source="https://orig00.deviantart.net/9c03/f/2013/196/d/3/yugioh_card_back_v2_by_endergon_oscuro-d6dlsyg.jpg" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFit"/>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Tapped="Handle_Tapped" />
+                     </Frame.GestureRecognizers>
+             </Frame>
+             <Frame Style="{StaticResource frameStyle}" x:Name="destroy" ClassId="0">       
+                    <Image Margin="10,10,10,10" Source="http://worldartsme.com/images/cartoon-explosion-clipart-1.jpg" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFit"/>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Tapped="Handle_Tapped" />
+                     </Frame.GestureRecognizers>
+             </Frame>
+        </StackLayout>    
+        </StackLayout>
+	</ContentPage.Content>
+</ContentPage>

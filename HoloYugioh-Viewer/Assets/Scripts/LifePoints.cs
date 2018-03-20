@@ -18,7 +18,7 @@ public class LifePoints : MonoBehaviour {
 	void Start () {
         textMesh = text.GetComponent<TextMesh>();
         initialText = textMesh.text.Substring(0, 7);
-        currentLifePoints = 8000;
+        currentLifePoints = 0;
         finalLifePoints = 8000;
         totalSeconds = 2.5f;
         currentSeconds = totalSeconds;

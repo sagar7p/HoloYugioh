@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="HoloDuelist.App">
+	<Application.Resources>
+		 <ResourceDictionary>
+            <Style x:Key="buttonStyle" TargetType="Button">
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="VerticalOptions" Value="FillAndExpand" />
+                <Setter Property="BorderColor" Value="Black" />
+                <Setter Property="BorderRadius" Value="5" />
+                <Setter Property="BorderWidth" Value="1" />
+                <Setter Property="WidthRequest" Value="200" />
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="BackgroundColor" Value="White"/>
+            </Style>
+            <Style x:Key="frameStyle" TargetType="Frame">
+                <Setter Property="WidthRequest" Value="80" />
+                <Setter Property="HeightRequest" Value="80" />
+                <Setter Property="Padding" Value="-5" />
+            </Style>
+        </ResourceDictionary>
+	</Application.Resources>
+</Application>

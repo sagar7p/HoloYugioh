@@ -25,7 +25,7 @@
               "Position" : 0
             }
           },
-          "Spell-Trap" : {
+          "SpellTrap" : {
             "Card1" : {
               "Name" : "",
               "Position" : 0
@@ -52,7 +52,7 @@
             }
           }
         },
-        "Life Points" : 8000
+        "LifePoints" : 8000
       },
       "Player2" : {
         "Field" : {
@@ -78,7 +78,7 @@
               "Position" : 0
             }
           },
-          "Spell-Trap" : {
+          "SpellTrap" : {
             "Card1" : {
               "Name" : "",
               "Position" : 0
@@ -105,7 +105,7 @@
             }
           }
         },
-        "Life Points" : 8000
+        "LifePoints" : 8000
       }
     }
   },
@@ -170,7 +170,7 @@
             }
           }
         },
-        "Life Points" : 6000,
+        "Life_Points" : 6000,
         "Name" : "Yusei"
       },
       "Player2" : {
