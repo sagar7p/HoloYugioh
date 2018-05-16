@@ -130,6 +130,15 @@
     <Reference Include="System.Reactive.PlatformServices">
       <HintPath>..\packages\Firebase.Xamarin.0.3.6\lib\System.Reactive.PlatformServices.dll</HintPath>
     </Reference>
+    <Reference Include="NdefLibrary">
+      <HintPath>..\packages\NdefLibrary.3.0.2\lib\portable-net45+win8+wp8+wpa81\NdefLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Poz1.NFCForms.Abstract">
+      <HintPath>..\packages\NFCForms.2.3.2\lib\MonoAndroid10\Poz1.NFCForms.Abstract.dll</HintPath>
+    </Reference>
+    <Reference Include="Poz1.NFCForms.Droid">
+      <HintPath>..\packages\NFCForms.2.3.2\lib\MonoAndroid10\Poz1.NFCForms.Droid.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />

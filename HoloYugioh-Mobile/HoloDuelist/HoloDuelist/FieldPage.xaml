@@ -4,11 +4,11 @@
         
         <Grid x:Name="grid" ColumnSpacing="6" RowSpacing="5" Margin="10,10,10,10" VerticalOptions="FillAndExpand">
         <Grid.RowDefinitions>
-          <RowDefinition Height="*"/>
-          <RowDefinition Height="*"/>
-          <RowDefinition Height="*"/>
-          <RowDefinition Height="*"/>
-          <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -17,220 +17,187 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Frame ClassId="Player2_Field_SpellTrap_Card5" StyleId="0" Grid.Row="0" Grid.Column="0" Padding="-5">       
+        <Frame ClassId="Player2_Field_SpellTrap_Card5" Grid.Row="0" Grid.Column="0" Padding="-5">       
             <Image x:Name="Player2_Field_SpellTrap_Card5" Margin="10,10,10,10" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFit"/>
              <Frame.GestureRecognizers>
                 <TapGestureRecognizer
-                    Tapped="Handle_Clicked" />
+                    Tapped="Card_Clicked" />
              </Frame.GestureRecognizers>
         </Frame>
-        <Frame ClassId="Player2_Field_SpellTrap_Card4" StyleId="0" Grid.Row="0" Grid.Column="1" Padding="-5">       
+        <Frame ClassId="Player2_Field_SpellTrap_Card4" Grid.Row="0" Grid.Column="1" Padding="-5">       
             <Image x:Name="Player2_Field_SpellTrap_Card4" Margin="10,10,10,10" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFit"/>
              <Frame.GestureRecognizers>
                 <TapGestureRecognizer
-                    Tapped="Handle_Clicked" />
+                    Tapped="Card_Clicked" />
              </Frame.GestureRecognizers>
         </Frame>
-        <Frame ClassId="Player2_Field_SpellTrap_Card3" StyleId="0" Grid.Row="0" Grid.Column="2" Padding="-5">       
+        <Frame ClassId="Player2_Field_SpellTrap_Card3" Grid.Row="0" Grid.Column="2" Padding="-5">       
             <Image x:Name="Player2_Field_SpellTrap_Card3" Margin="10,10,10,10" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFit"/>
              <Frame.GestureRecognizers>
                 <TapGestureRecognizer
-                    Tapped="Handle_Clicked" />
+                    Tapped="Card_Clicked" />
              </Frame.GestureRecognizers>
         </Frame>
-        <Frame ClassId="Player2_Field_SpellTrap_Card2" StyleId="0" Grid.Row="0" Grid.Column="3" Padding="-5">       
+        <Frame ClassId="Player2_Field_SpellTrap_Card2" Grid.Row="0" Grid.Column="3" Padding="-5">       
             <Image x:Name="Player2_Field_SpellTrap_Card2" Margin="10,10,10,10" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFit"/>
              <Frame.GestureRecognizers>
                 <TapGestureRecognizer
-                    Tapped="Handle_Clicked" />
+                    Tapped="Card_Clicked" />
              </Frame.GestureRecognizers>
         </Frame>
-        <Frame ClassId="Player2_Field_SpellTrap_Card1" StyleId="0" Grid.Row="0" Grid.Column="4" Padding="-5">       
+        <Frame ClassId="Player2_Field_SpellTrap_Card1" Grid.Row="0" Grid.Column="4" Padding="-5">       
             <Image x:Name="Player2_Field_SpellTrap_Card1" Margin="10,10,10,10" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFit"/>
              <Frame.GestureRecognizers>
                 <TapGestureRecognizer
-                    Tapped="Handle_Clicked" />
+                    Tapped="Card_Clicked" />
              </Frame.GestureRecognizers>
         </Frame>
                 
 
-        <Frame ClassId="Player2_Field_Monster_Card5" StyleId="0" Grid.Row="1" Grid.Column="0" Padding="-5">       
+        <Frame ClassId="Player2_Field_Monster_Card5" Grid.Row="1" Grid.Column="0" Padding="-5">       
             <Image  x:Name="Player2_Field_Monster_Card5" Margin="10,10,10,10" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFit"/>
              <Frame.GestureRecognizers>
                 <TapGestureRecognizer
-                    Tapped="Handle_Clicked" />
+                    Tapped="Card_Clicked" />
              </Frame.GestureRecognizers>
         </Frame>
-        <Frame ClassId="Player2_Field_Monster_Card4" StyleId="0" Grid.Row="1" Grid.Column="1" Padding="-5">       
+        <Frame ClassId="Player2_Field_Monster_Card4" Grid.Row="1" Grid.Column="1" Padding="-5">       
             <Image x:Name="Player2_Field_Monster_Card4" Margin="10,10,10,10" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFit"/>
              <Frame.GestureRecognizers>
                 <TapGestureRecognizer
-                    Tapped="Handle_Clicked" />
+                    Tapped="Card_Clicked" />
              </Frame.GestureRecognizers>
         </Frame>
-        <Frame ClassId="Player2_Field_Monster_Card3" StyleId="0" Grid.Row="1" Grid.Column="2" Padding="-5">       
+        <Frame ClassId="Player2_Field_Monster_Card3" Grid.Row="1" Grid.Column="2" Padding="-5">       
             <Image x:Name="Player2_Field_Monster_Card3" Margin="10,10,10,10" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFit"/>
              <Frame.GestureRecognizers>
                 <TapGestureRecognizer
-                    Tapped="Handle_Clicked" />
+                    Tapped="Card_Clicked" />
              </Frame.GestureRecognizers>
         </Frame>
-        <Frame ClassId="Player2_Field_Monster_Card2" StyleId="0"  Grid.Row="1" Grid.Column="3" Padding="-5">       
+        <Frame ClassId="Player2_Field_Monster_Card2" Grid.Row="1" Grid.Column="3" Padding="-5">       
             <Image x:Name="Player2_Field_Monster_Card2" Margin="10,10,10,10" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFit"/>
              <Frame.GestureRecognizers>
                 <TapGestureRecognizer
-                    Tapped="Handle_Clicked" />
+                    Tapped="Card_Clicked" />
              </Frame.GestureRecognizers>
         </Frame>
-        <Frame  ClassId="Player2_Field_Monster_Card1" StyleId="0" Grid.Row="1" Grid.Column="4" Padding="-5">       
+        <Frame  ClassId="Player2_Field_Monster_Card1" Grid.Row="1" Grid.Column="4" Padding="-5">       
             <Image x:Name="Player2_Field_Monster_Card1" Margin="10,10,10,10" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFit"/>
              <Frame.GestureRecognizers>
                 <TapGestureRecognizer
-                    Tapped="Handle_Clicked" />
+                    Tapped="Card_Clicked" />
              </Frame.GestureRecognizers>
         </Frame>
 
 
-        <Frame ClassId="Player1_Field_SpellTrap_Card6" StyleId="0" Grid.Row="2" Grid.Column="0" Padding="-5">       
+        <Frame ClassId="Player1_Field_SpellTrap_Card6" Grid.Row="2" Grid.Column="0" Padding="-5">       
             <Image x:Name="Player1_Field_SpellTrap_Card6" Margin="10,10,10,10" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFit"/>
              <Frame.GestureRecognizers>
                 <TapGestureRecognizer
-                    Tapped="Handle_Clicked" />
+                    Tapped="Card_Clicked" />
              </Frame.GestureRecognizers>
         </Frame>
-        <Frame ClassId="Player1_Life_Points" StyleId="0" Grid.Row="2" Grid.Column="1" Padding="-5">       
-            <Label x:Name="Player1_Life_Points" Margin="10,10,10,10" Text="8000" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+        <Frame ClassId="Player1_LifePoints" Grid.Row="2" Grid.Column="1" Padding="-5">       
+            <Label x:Name="Player1_LifePoints" Margin="10,10,10,10" Text="8000" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
              <Frame.GestureRecognizers>
                 <TapGestureRecognizer
-                    Tapped="Handle_Clicked" />
+                    Tapped="Card_Clicked" />
              </Frame.GestureRecognizers>
         </Frame>
         <Frame ClassId="DUEL" Grid.Row="2" Grid.Column="2" Padding="-5">       
             <Label x:Name="DUEL" Margin="10,10,10,10" Text="DUEL" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
              <Frame.GestureRecognizers>
                 <TapGestureRecognizer
-                    Tapped="Handle_Clicked" />
+                    Tapped="Card_Clicked" />
              </Frame.GestureRecognizers>
         </Frame>
-        <Frame ClassId="Player2_Life_Points" StyleId="0" Grid.Row="2" Grid.Column="3" Padding="-5">       
-            <Label x:Name="Player2_Life_Points" Margin="10,10,10,10" Text="8000" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+        <Frame ClassId="Player2_LifePoints" Grid.Row="2" Grid.Column="3" Padding="-5">       
+            <Label x:Name="Player2_LifePoints" Margin="10,10,10,10" Text="8000" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
              <Frame.GestureRecognizers>
                 <TapGestureRecognizer
-                    Tapped="Handle_Clicked" />
+                    Tapped="Card_Clicked" />
              </Frame.GestureRecognizers>
         </Frame>
-        <Frame ClassId="Player2_Field_SpellTrap_Card6" StyleId="0" Grid.Row="2" Grid.Column="4" Padding="-5">       
+        <Frame ClassId="Player2_Field_SpellTrap_Card6" Grid.Row="2" Grid.Column="4" Padding="-5">       
             <Image x:Name="Player2_Field_SpellTrap_Card6" Margin="10,10,10,10" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFit"/>
              <Frame.GestureRecognizers>
                 <TapGestureRecognizer
-                    Tapped="Handle_Clicked" />
+                    Tapped="Card_Clicked" />
              </Frame.GestureRecognizers>
         </Frame>
 
-        <Frame ClassId="Player1_Field_Monster_Card1" StyleId="0" Grid.Row="3" Grid.Column="0" Padding="-5">       
+        <Frame ClassId="Player1_Field_Monster_Card1" Grid.Row="3" Grid.Column="0" Padding="-5">       
             <Image x:Name="Player1_Field_Monster_Card1" Margin="10,10,10,10" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFit"/>
              <Frame.GestureRecognizers>
                 <TapGestureRecognizer
-                    Tapped="Handle_Clicked" />
+                    Tapped="Card_Clicked" />
              </Frame.GestureRecognizers>
         </Frame>
-        <Frame ClassId="Player1_Field_Monster_Card2" StyleId="0" Grid.Row="3" Grid.Column="1" Padding="-5">       
+        <Frame ClassId="Player1_Field_Monster_Card2" Grid.Row="3" Grid.Column="1" Padding="-5">       
             <Image x:Name="Player1_Field_Monster_Card2" Margin="10,10,10,10" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFit"/>
              <Frame.GestureRecognizers>
                 <TapGestureRecognizer
-                    Tapped="Handle_Clicked" />
+                    Tapped="Card_Clicked" />
              </Frame.GestureRecognizers>
         </Frame>
-        <Frame ClassId="Player1_Field_Monster_Card3" StyleId="0" Grid.Row="3" Grid.Column="2" Padding="-5">       
+        <Frame ClassId="Player1_Field_Monster_Card3" Grid.Row="3" Grid.Column="2" Padding="-5">       
             <Image x:Name="Player1_Field_Monster_Card3" Margin="10,10,10,10" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFit"/>
              <Frame.GestureRecognizers>
                 <TapGestureRecognizer
-                    Tapped="Handle_Clicked" />
+                    Tapped="Card_Clicked" />
              </Frame.GestureRecognizers>
         </Frame>
-        <Frame ClassId="Player1_Field_Monster_Card4" StyleId="0" Grid.Row="3" Grid.Column="3" Padding="-5">       
+        <Frame ClassId="Player1_Field_Monster_Card4" Grid.Row="3" Grid.Column="3" Padding="-5">       
             <Image x:Name="Player1_Field_Monster_Card4" Margin="10,10,10,10" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFit"/>
              <Frame.GestureRecognizers>
                 <TapGestureRecognizer
-                    Tapped="Handle_Clicked" />
+                    Tapped="Card_Clicked" />
              </Frame.GestureRecognizers>
         </Frame>
-        <Frame ClassId="Player1_Field_Monster_Card5" StyleId="0" Grid.Row="3" Grid.Column="4" Padding="-5">       
+        <Frame ClassId="Player1_Field_Monster_Card5" Grid.Row="3" Grid.Column="4" Padding="-5">       
             <Image x:Name="Player1_Field_Monster_Card5" Margin="10,10,10,10" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFit"/>
              <Frame.GestureRecognizers>
                 <TapGestureRecognizer
-                    Tapped="Handle_Clicked" />
+                    Tapped="Card_Clicked" />
              </Frame.GestureRecognizers>
         </Frame>
 
-        <Frame ClassId="Player1_Field_SpellTrap_Card1" StyleId="0" Grid.Row="4" Grid.Column="0" Padding="-5">       
+        <Frame ClassId="Player1_Field_SpellTrap_Card1" Grid.Row="4" Grid.Column="0" Padding="-5">       
             <Image x:Name="Player1_Field_SpellTrap_Card1" Margin="10,10,10,10" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFit"/>
              <Frame.GestureRecognizers>
                 <TapGestureRecognizer
-                    Tapped="Handle_Clicked" />
+                    Tapped="Card_Clicked" />
              </Frame.GestureRecognizers>
         </Frame>
-        <Frame ClassId="Player1_Field_SpellTrap_Card2" StyleId="0" Grid.Row="4" Grid.Column="1" Padding="-5">       
+        <Frame ClassId="Player1_Field_SpellTrap_Card2" Grid.Row="4" Grid.Column="1" Padding="-5">       
             <Image x:Name="Player1_Field_SpellTrap_Card2" Margin="10,10,10,10" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFit"/>
              <Frame.GestureRecognizers>
                 <TapGestureRecognizer
-                    Tapped="Handle_Clicked" />
+                    Tapped="Card_Clicked" />
              </Frame.GestureRecognizers>
         </Frame>
-        <Frame Grid.Row="4" ClassId="Player1_Field_SpellTrap_Card3" StyleId="0" Grid.Column="2" Padding="-5">       
+        <Frame Grid.Row="4" ClassId="Player1_Field_SpellTrap_Card3" Grid.Column="2" Padding="-5">       
             <Image x:Name="Player1_Field_SpellTrap_Card3" Margin="10,10,10,10" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFit"/>
              <Frame.GestureRecognizers>
                 <TapGestureRecognizer
-                    Tapped="Handle_Clicked" />
+                    Tapped="Card_Clicked" />
              </Frame.GestureRecognizers>
         </Frame>
-        <Frame Grid.Row="4" ClassId="Player1_Field_SpellTrap_Card4" StyleId="0" Grid.Column="3" Padding="-5">       
+        <Frame Grid.Row="4" ClassId="Player1_Field_SpellTrap_Card4" Grid.Column="3" Padding="-5">       
             <Image x:Name="Player1_Field_SpellTrap_Card4" Margin="10,10,10,10" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFit"/>
              <Frame.GestureRecognizers>
                 <TapGestureRecognizer
-                    Tapped="Handle_Clicked" />
+                    Tapped="Card_Clicked" />
              </Frame.GestureRecognizers>
         </Frame>
-        <Frame Grid.Row="4" ClassId="Player1_Field_SpellTrap_Card5" StyleId="0" Grid.Column="4" Padding="-5">       
+        <Frame Grid.Row="4" ClassId="Player1_Field_SpellTrap_Card5" Grid.Column="4" Padding="-5">       
             <Image x:Name="Player1_Field_SpellTrap_Card5" Margin="10,10,10,10" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFit"/>
              <Frame.GestureRecognizers>
                 <TapGestureRecognizer
-                    Tapped="Handle_Clicked" />
+                    Tapped="Card_Clicked" />
              </Frame.GestureRecognizers>
         </Frame>
-
-    <!--
-    <Button x:Name="p2st5" Text="ST5" Grid.Row="0" Grid.Column="0" Clicked="Handle_Clicked" Style="{StaticResource buttonStyle}" />
-    <Button x:Name="p2st4" Text="ST4" Grid.Row="0" Grid.Column="1" Clicked="Handle_Clicked" Style="{StaticResource buttonStyle}"/>
-    <Button x:Name="p2st3" Text="ST3" Grid.Row="0" Grid.Column="2" Clicked="Handle_Clicked" Style="{StaticResource buttonStyle}"/>
-    <Button x:Name="p2st2" Text="ST2" Grid.Row="0" Grid.Column="3" Clicked="Handle_Clicked" Style="{StaticResource buttonStyle}"/>
-    <Button x:Name="p2st1" Text="ST1" Grid.Row="0" Grid.Column="4" Clicked="Handle_Clicked" Style="{StaticResource buttonStyle}"/>
-
-    <Button x:Name="p2mon5" Text="M5" Grid.Row="1" Grid.Column="0" Clicked="Handle_Clicked" Style="{StaticResource buttonStyle}"/>
-    <Button x:Name="p2mon4" Text="M4" Grid.Row="1" Grid.Column="1" Clicked="Handle_Clicked" Style="{StaticResource buttonStyle}"/>
-    <Button x:Name="p2mon3" Text="M3" Grid.Row="1" Grid.Column="2" Clicked="Handle_Clicked" Style="{StaticResource buttonStyle}"/>
-    <Button x:Name="p2mon2" Text="M2" Grid.Row="1" Grid.Column="3" Clicked="Handle_Clicked" Style="{StaticResource buttonStyle}"/>
-    <Button x:Name="p2mon1" Text="M1" Grid.Row="1" Grid.Column="4" Clicked="Handle_Clicked" Style="{StaticResource buttonStyle}"/>
-       
-
-    <Button x:Name="p1field" Text="F1" Grid.Row="2" Grid.Column="0" Clicked="Handle_Clicked" Style="{StaticResource buttonStyle}"/>
-    <Button x:Name="lifeup" Text="+" Grid.Row="2" Grid.Column="1" Clicked="Handle_Clicked" Style="{StaticResource buttonStyle}"/>
-    <Button x:Name="duel" Text="DUEL" Grid.Row="2" Grid.Column="2" Clicked="Handle_Clicked" Style="{StaticResource buttonStyle}"/>
-    <Button x:Name="lifedown" Text="-" Grid.Row="2" Grid.Column="3" Clicked="Handle_Clicked" Style="{StaticResource buttonStyle}"/>
-    <Button x:Name="p2field" Text="F2" Grid.Row="2" Grid.Column="4" Clicked="Handle_Clicked" Style="{StaticResource buttonStyle}"/>
-
-    <Button x:Name="p1mon1" Text="M1" Grid.Row="3" Grid.Column="0" Clicked="Handle_Clicked" Style="{StaticResource buttonStyle}"/>
-    <Button x:Name="p1mon2" Text="M2" Grid.Row="3" Grid.Column="1" Clicked="Handle_Clicked" Style="{StaticResource buttonStyle}"/>
-    <Button x:Name="p1mon3" Text="M3" Grid.Row="3" Grid.Column="2" Clicked="Handle_Clicked" Style="{StaticResource buttonStyle}"/>
-    <Button x:Name="p1mon4" Text="M4" Grid.Row="3" Grid.Column="3" Clicked="Handle_Clicked" Style="{StaticResource buttonStyle}"/>
-    <Button x:Name="p1mon5" Text="M5" Grid.Row="3" Grid.Column="4" Clicked="Handle_Clicked" Style="{StaticResource buttonStyle}"/>
-
-    <Button x:Name="p1st1" Text="ST1" Grid.Row="4" Grid.Column="0" Clicked="Handle_Clicked" Style="{StaticResource buttonStyle}"/>
-    <Button x:Name="p1st2" Text="ST2" Grid.Row="4" Grid.Column="1" Clicked="Handle_Clicked" Style="{StaticResource buttonStyle}"/>
-    <Button x:Name="p1st3" Text="ST3" Grid.Row="4" Grid.Column="2" Clicked="Handle_Clicked" Style="{StaticResource buttonStyle}"/>
-    <Button x:Name="p1st4" Text="ST4" Grid.Row="4" Grid.Column="3" Clicked="Handle_Clicked" Style="{StaticResource buttonStyle}"/>
-    <Button x:Name="p1st5" Text="ST5" Grid.Row="4" Grid.Column="4" Clicked="Handle_Clicked" Style="{StaticResource buttonStyle}"/>
-    -->
 </Grid>
     </ContentPage.Content>
 </ContentPage>

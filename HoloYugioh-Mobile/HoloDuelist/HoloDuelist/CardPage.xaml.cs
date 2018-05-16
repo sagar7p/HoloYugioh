@@ -4,90 +4,139 @@ using System.Collections.Generic;
 using Xamarin.Forms;
 using Firebase.Xamarin.Database;
 using Firebase.Xamarin.Database.Query;
+using Poz1.NFCForms.Abstract;
+using NdefLibrary.Ndef;
+using System.Threading.Tasks;
 
 namespace HoloDuelist
 {
     public partial class CardPage : ContentPage
     {
         string player;
-        string cardpos;
-        string cardtype;
+        string cardType;
+        string cardLoc;
+        string cardPos;
+        string cardSource;
+        string cardName;
         FirebaseClient firebase;
         ChildQuery child;
+        private readonly INfcForms device;
 
         public CardPage() => InitializeComponent();
 
-       
+
         //constructor for card
-        public CardPage(string player, string cardpos, string cardtype, string source)
+        public CardPage(string player, string cardType, string cardLoc, string cardPos, string cardSource)
         {
-            this.player = player;
-            this.cardpos = cardpos;
-            this.cardtype = cardtype;
             InitializeComponent();
-            Console.WriteLine("P: " + player + " C: " + cardpos);
+
+            this.player = player;
+            this.cardType = cardType;
+            this.cardLoc = cardLoc;
+            this.cardPos = cardPos;
+            this.cardSource = cardSource;
+
+
+            //init firebase
             firebase = new FirebaseClient("https://holoyugioh.firebaseio.com");
             if (!string.IsNullOrEmpty(player))
             {
-                //change to stirng format to clean it up
-                child = firebase.Child("Game/Players/" + player + "/Field/" + cardtype + "/" + cardpos);
+                child = firebase.Child(string.Format("Game/Players/{0}/Field/{1}/{2}", player, cardType, cardLoc));
 
             }
-            if (!string.IsNullOrWhiteSpace(source))
+
+            //init NFC 
+            device = DependencyService.Get<INfcForms>();
+            device.NewTag += HandleNewTag;
+
+
+
+            //init source
+            if (!string.IsNullOrWhiteSpace(cardSource))
             {
-                card.Source = source;
+                card.Source = cardSource;
             }
 
             //remove specific buttons
-            if(this.cardtype == "SpellTrap")
+            if (cardType.Equals(GameInfo.SpellTrap))
             {
                 defense.IsVisible = false;
                 down.IsVisible = false;
 
             }
-            else if(this.cardtype == "Monster")
+            else if (cardType.Equals(GameInfo.Monster))
             {
                 set.IsVisible = false;
             }
-           
+
+        }
+
+        //nfc found
+        private void HandleNewTag(object sender, NfcFormsTag e)
+        {
+            var record = e.NdefMessage[0];
+
+            // Go through each record, get payload
+            var output = System.Text.Encoding.ASCII.GetString(record.Payload);
+            var cardname = output.Substring(3);
+            Console.WriteLine("Name: " + cardname);
+            UpdateCardImage(cardname);
+
         }
 
         //tap an action
-        async void Handle_Tapped(object sender, System.EventArgs e)
+        async void Action_Tapped(object sender, System.EventArgs e)
         {
             var button = (Frame)sender;
             int position;
             if(int.TryParse(button.ClassId, out position)) 
             {
-                Console.WriteLine(button.ClassId);
-                await child.Child("Position").PutAsync(position);
-                Console.WriteLine($"Key for the new item: {button.ClassId}");  
-                if (position == 0) 
+                //send position to firebase
+                if (button.ClassId.Equals(GameInfo.DestroyPos)) 
                 {
-                    //card.Source = "https://static-3.studiobebop.net/ygo_data/card_images/Token.jpg";
                     SendToFirebase("");
                 }
+                else if(!string.IsNullOrEmpty(cardName))
+                {
+                    SendToFirebase(cardName);
+                }
+
+                await Task.Delay(500);
+                await child.Child(GameInfo.Position).PutAsync(position);
+
+               
             }
-           await Application.Current.MainPage.Navigation.PopAsync();
+
+            device.NewTag -= HandleNewTag;
+
+            await Application.Current.MainPage.Navigation.PopAsync();
         }
 
         //finish typing card
-        void Handle_Completed(object sender, System.EventArgs e)
+        void Card_Completed(object sender, System.EventArgs e)
         {
             var entry = (Entry)sender;
-            var text = entry.Text;
-            var cardText = entry.Text.Replace(' ', '_');
-            var source = "https://static-3.studiobebop.net/ygo_data/card_images/" + cardText + ".jpg";
-            Console.WriteLine(source);
+
+            UpdateCardImage(entry.Text);
+        }
+
+        void UpdateCardImage(string rawText)
+        {
+            var modified = System.Threading.Thread.CurrentThread.CurrentCulture.TextInfo.ToTitleCase(rawText.ToLower());
+            var cardText = modified.Replace(' ', '_');
+            var source = string.Format("{0}{1}.jpg", GameInfo.GenericCard, cardText);
             card.Source = source;
-            SendToFirebase(text);
+            cardName = modified;
+            //SendToFirebase(modified);
         }
 
         //send to firebase
-        private async void SendToFirebase(string name)
+        async void SendToFirebase(string name)
         {
-            await child.Child("Name").PutAsync(name);
-            Console.WriteLine($"Key for the new item: {name}");  
+            Console.WriteLine("Uploading: " + name);
+            await child.Child(GameInfo.Name).PutAsync(name);
         }
+
+
     }
 }

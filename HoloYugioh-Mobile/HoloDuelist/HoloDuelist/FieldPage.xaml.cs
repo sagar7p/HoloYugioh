@@ -14,13 +14,19 @@ namespace HoloDuelist
         public FieldPage()
         {
             InitializeComponent();
-            firebase = new FirebaseClient("https://holoyugioh.firebaseio.com");
-            firebase.Child(GameInfo.GameName).AsObservable<JObject>().Subscribe(cards => InitCards());
-
-            InitCards();
-
+            InitFirebase();
         }
 
+        //Initialize Firebase
+        public void InitFirebase()
+        {
+            //Initialize Firebase
+            firebase = new FirebaseClient("https://holoyugioh.firebaseio.com");
+            firebase.Child(GameInfo.GameName).AsObservable<JObject>().Subscribe(_ => InitCards());
+                 
+        }
+
+        //Get cards
         protected override void OnAppearing()
         {
             InitCards();
@@ -37,117 +43,131 @@ namespace HoloDuelist
             {
                 //Players
                 var players = item.Object;
-                var player1 = players["Player1"];
-                var player2 = players["Player2"];
-                InitPlayer(player1);
-                InitPlayer(player2);
-
-                //Console.WriteLine($"{item.Key} name is {item.Object.ToString()}");
+                InitPlayer(players[GameInfo.CurrentPlayer], GameInfo.CurrentPlayer, GameInfo.Player1);
+                InitPlayer(players[GameInfo.Opponent], GameInfo.Opponent, GameInfo.Player2);
             }
         }
 
         //get cards from firebase
-        public void InitPlayer(JToken player)
+        public void InitPlayer(JToken player,string replacePlayer, string fieldPlayer)
         {
-            var field = player["Field"];
-            var lp = player["LifePoints"];
+            var field = player[GameInfo.Field];
+            var lp = player[GameInfo.LifePoints];
 
-            var monsters = field["Monster"];
-            var SpellTrap = field["SpellTrap"];
-            for (var i = 1; i < 6; i++)
+            var monsters = field[GameInfo.Monster];
+            var spellTrap = field[GameInfo.SpellTrap];
+            for (var i = 1; i <= 6; i++)
             {
+                //go through every card
                 string cardIndex = "Card" + i;
-                var monster = monsters[cardIndex];
-                var magic = SpellTrap[cardIndex];
-                var monImage = this.FindByName<Image>(monster.Path.Replace('.','_'));
-                var magImage = this.FindByName<Image>(magic.Path.Replace('.', '_'));
 
-                var monText = monster["Name"].ToString().Replace(' ','_');
-                var monPos = monster["Position"].ToString();
-                var magText = magic["Name"].ToString().Replace(' ', '_');
-                var magPos = magic["Position"].ToString();
-
-
-                if(monPos != "0" && !string.IsNullOrEmpty(monText)) 
+                //monsters
+                if (i  < 6)
                 {
-                    var source = "https://static-3.studiobebop.net/ygo_data/card_images/" + monText + ".jpg";
-                    monImage.Parent.StyleId = source;
-                    monImage.Scale = 1;
-                    monImage.Rotation = 0;
+                    //get monster path
+                    var monster = monsters[cardIndex];
+                    var monsterPath = monster.Path.Replace('.', '_').Replace(replacePlayer, fieldPlayer);
+                    var monImage = this.FindByName<Image>(monsterPath);
+                    var monText = monster[GameInfo.Name].ToString().Replace(' ', '_');
+                    var monPos = monster[GameInfo.Position].ToString();
 
-                    if (monPos == "2" || monPos == "3")
+                    //set source and position
+                    if (!monPos.Equals(GameInfo.DestroyPos) && !string.IsNullOrEmpty(monText))
                     {
-                        monImage.Rotation = 90;
-                        monImage.Scale = 0.7;
-                        source = monPos=="2" ? "https://orig00.deviantart.net/9c03/f/2013/196/d/3/yugioh_card_back_v2_by_endergon_oscuro-d6dlsyg.jpg" : source;
+                        var source = string.Format("{0}{1}.jpg", GameInfo.GenericCard, monText);
+                        monImage.Parent.StyleId = source;
+                        monImage.StyleId = monPos;
+                        monImage.Scale = 1;
+                        monImage.Rotation = 0;
+
+                        if (monPos.Equals(GameInfo.DefensePos) || monPos.Equals(GameInfo.SetPos))
+                        {
+                            monImage.Rotation = 90;
+                            monImage.Scale = 0.7;
+                            source = monPos.Equals(GameInfo.SetPos) ? GameInfo.SetCard : source;
+                        }
+
+
+
+                        monImage.Source = source;
+
                     }
-                   
 
-                    monImage.Source = source;
-
+                    //reset ids
+                    else
+                    {
+                        monImage.Source = string.Empty;
+                        monImage.Parent.StyleId = string.Empty;
+                        monImage.StyleId = string.Empty;
+                    } 
                 }
 
-                else
-                {
-                    monImage.Source = string.Empty;
-                    monImage.Parent.StyleId = string.Empty;
-                }
 
-                if (magPos != "0" && !string.IsNullOrEmpty(magText))
+                //spell get path
+                var magic = spellTrap[cardIndex];
+                var magicPath = magic.Path.Replace('.', '_').Replace(replacePlayer, fieldPlayer);
+                 
+                var magImage = this.FindByName<Image>(magicPath);
+
+                var magText = magic[GameInfo.Name].ToString().Replace(' ', '_');
+                var magPos = magic[GameInfo.Position].ToString();
+
+
+                //set ids and source
+                if (!magPos.Equals(GameInfo.DestroyPos) && !string.IsNullOrEmpty(magText))
                 {
-                    var source = "https://static-3.studiobebop.net/ygo_data/card_images/" + magText + ".jpg";
+                    var source = string.Format("{0}{1}.jpg", GameInfo.GenericCard, magText);
                     magImage.Parent.StyleId = source;
+                    magImage.StyleId = magPos;
+                    magImage.Source = magPos.Equals(GameInfo.SetPos) ? GameInfo.SetCard : source;
 
-                    source = magPos == "2" ? "https://orig00.deviantart.net/9c03/f/2013/196/d/3/yugioh_card_back_v2_by_endergon_oscuro-d6dlsyg.jpg" : source;
-                    magImage.Source = source;
                 }
 
                 else
                 {
                     magImage.Source = string.Empty;
                     magImage.Parent.StyleId = string.Empty;
-                }
+                    magImage.StyleId = string.Empty;
+                } 
                
-
             }
         }
 
         //go to specific card type
-        async void Handle_Clicked(object sender, System.EventArgs e)
+        async void Card_Clicked(object sender, System.EventArgs e)
         {
-            Frame btn = sender as Frame; 
-            int x=(int)btn.GetValue(Grid.RowProperty); 
-            int y=(int)btn.GetValue(Grid.ColumnProperty);
+            Frame card = sender as Frame;
+            var image = card.FindByName<Image>(card.ClassId);
 
-            string player = "";
-            string cardpos = "";
-            string cardtype = "";
+            var fullName = card.ClassId;
+            var path = fullName.Split('_');
+            var player = path[0];
 
-            //player 1
-            if (x > 2) {
-                player = "Player1";
-                cardpos = "Card" + (y+1);
-                cardtype = x == 3 ? "Monster" : "SpellTrap";
+            //center button
+            if (player.Equals("DUEL")) return;
+
+            var loc = path[0];
+
+            //life points
+            if (loc.Equals(GameInfo.LifePoints))
+            {
+                //TO DO
             }
 
-            //player 2
-            else if(x < 2) {
-                player = "Player2";
-                cardpos = "Card" + (5 - y);
-                cardtype = x == 1 ? "Monster" : "SpellTrap";
-            }
-            //fieldspell
-            else {
-                if (y == 0 || y == 4) {
-                    player = y == 0 ? "Player1"  : "Player2";
-                    cardpos = "Card6";
-                    cardtype = "SpellTrap";
-                }
+            //navigate to page
+            else
+            {
+                var cardType = path[2];
+                var cardLoc = path[3];
+                var cardPos = image.StyleId;
+                var cardSource = card.StyleId;
+                await Navigation.PushAsync(new CardPage(player.Equals(GameInfo.CurrentPlayer) ? GameInfo.Player1 : GameInfo.Player2, cardType, cardLoc, cardPos, cardSource));
+
             }
 
-            //if(GameInfo.CurrentPlayer.Equals(player))
-            await Navigation.PushAsync(new CardPage(player,cardpos,cardtype,btn.StyleId));
         }
+
+
     }
 
 }
